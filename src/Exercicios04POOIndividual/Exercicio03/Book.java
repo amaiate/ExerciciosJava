@@ -1,5 +1,6 @@
 package Exercicios04POOIndividual.Exercicio03;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Book {
@@ -12,9 +13,9 @@ public class Book {
 
     private String codigo;
 
-    private Date reserva;
+    private Calendar reserva;
 
-    private Date devolucao;
+    private Calendar devolucao;
 
     public Book() {
 
@@ -51,20 +52,29 @@ public class Book {
         this.codigo = codigo;
     }
 
-    public Date getReserva() {
+    public Calendar getReserva() {
         return reserva;
     }
 
-    public void setReserva(Date reserva) {
+    public void setReserva(Calendar reserva) {
         this.reserva = reserva;
     }
 
-    public Date getDevolucao() {
+    public Calendar getDevolucao() {
         return devolucao;
     }
 
-    public void setDevolucao(Date devolucao) {
+    public void setDevolucao(Calendar devolucao) {
         this.devolucao = devolucao;
+    }
+
+    public void Emprestimo(Calendar data){
+        this.reserva = data;
+
+    }
+
+    public void Devolver (Calendar data){
+        this.devolucao = data;
     }
 
 
@@ -74,8 +84,14 @@ public class Book {
                 "titulo= '" + titulo + '\'' +
                 ", autor= '" + autor + '\'' +
                 ", codigo= '" + codigo + '\'' +
-                ", reserva= " + reserva +
-                ", devolucao= " + devolucao +
+                ", reserva= " + reserva.getTime() +
+                ", devolucao= " + devolucao.getTime() +
                 '}';
     }
+
+    //Quando efetuamos a troca de toString para tostring ele dá um erro pois,
+    //Override deve ser usado para sobrescrever métodos.
+    //Usamos para estender ou modificar a implementação
+    //de um método.
+
 }
