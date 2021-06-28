@@ -15,22 +15,8 @@ public class Data extends Date {
 
     private Date data;
 
-    public boolean verificaData(String data){
 
-            String dateFormat = "dd/MM/uuuu";
-
-            DateTimeFormatter dateTimeFormatter = DateTimeFormatter
-                    .ofPattern(dateFormat)
-                    .withResolverStyle(ResolverStyle.STRICT);
-            try {
-                LocalDate date = LocalDate.parse(data, dateTimeFormatter);
-                return true;
-            } catch (DateTimeParseException e) {
-                return false;
-            }
-        }
-
-    public boolean isValid(String date) {
+    public boolean validaData(String date) {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             LocalDate d = LocalDate.parse(date, formatter);

@@ -18,7 +18,7 @@ public class Main {
         Date dataFormatada = formato.parse(n);
 
         Data dt = new Data(dataFormatada);
-        dt.isValid(n);
+        dt.validaData(n);
 
 
         dt.acrescentadata();
