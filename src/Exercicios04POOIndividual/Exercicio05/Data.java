@@ -1,10 +1,61 @@
 package Exercicios04POOIndividual.Exercicio05;
 
-public class Data {
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
+import java.util.Calendar;
+import java.util.Date;
 
-    /*Crie uma classe Data. A classe conterá, além dos construtores que você considera apropriados,
-    métodos de acesso e o método toString, conforme explicamos no exercício anterior, um método para
-    verificar se a data está correta e outro para adicionar um dia ao valor atual da data.
-    A classe GregorianCalendar deve ser investigada e usada para implementar os construtores e métodos Date.
-     */
+public class Data extends Date {
+
+    public Data(Date date) {
+        this.data = date;
+    }
+
+    private Date data;
+
+    public boolean verificaData(String data){
+
+            String dateFormat = "dd/MM/uuuu";
+
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+                    .ofPattern(dateFormat)
+                    .withResolverStyle(ResolverStyle.STRICT);
+            try {
+                LocalDate date = LocalDate.parse(data, dateTimeFormatter);
+                return true;
+            } catch (DateTimeParseException e) {
+                return false;
+            }
+        }
+
+    public boolean isValid(String date) {
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate d = LocalDate.parse(date, formatter);
+            System.out.println("Data correta: " + d);
+            return true;
+        } catch (DateTimeParseException e) {
+            System.out.println("Essa data está inválida: " + e);
+            return false;
+
+        }
+    }
+
+
+    public void acrescentadata(){
+        Calendar c = Calendar.getInstance();
+        c.setTime(this.data);
+        c.add(Calendar.DATE, 1);
+        this.data = c.getTime();
+        System.out.println("Acrescentando um dia: "+ this.data);
+    }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "data= " + data +
+                '}';
+    }
 }
