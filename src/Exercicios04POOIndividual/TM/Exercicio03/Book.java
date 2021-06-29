@@ -1,7 +1,6 @@
-package Exercicios04POOIndividual.Exercicio03;
+package Exercicios04POOIndividual.TM.Exercicio03;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class Book {
 

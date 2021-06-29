@@ -1,4 +1,4 @@
-package Exercicios04POOIndividual.Exercicio04;
+package Exercicios04POOIndividual.TM.Exercicio04;
 
 public class Fracao {
 

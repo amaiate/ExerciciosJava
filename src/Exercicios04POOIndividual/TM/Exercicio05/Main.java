@@ -1,9 +1,7 @@
-package Exercicios04POOIndividual.Exercicio05;
+package Exercicios04POOIndividual.TM.Exercicio05;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 

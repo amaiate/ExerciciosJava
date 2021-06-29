@@ -1,12 +1,7 @@
-package Exercicios04POOIndividual.Exercicio03;
+package Exercicios04POOIndividual.TM.Exercicio03;
 
-import java.text.SimpleDateFormat;
-import java.time.Clock;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 public class Program {
 

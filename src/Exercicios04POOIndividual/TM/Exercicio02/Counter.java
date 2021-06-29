@@ -1,4 +1,4 @@
-package Exercicios04POOIndividual.Exercicio02;
+package Exercicios04POOIndividual.TM.Exercicio02;
 
 public class Counter {
 

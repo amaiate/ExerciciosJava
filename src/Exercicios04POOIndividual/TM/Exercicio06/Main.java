@@ -1,4 +1,4 @@
-package Exercicios04POOIndividual.Exercicio06;
+package Exercicios04POOIndividual.TM.Exercicio06;
 
 public class Main {
     public static void main(String[] args) {

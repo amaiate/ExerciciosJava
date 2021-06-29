@@ -1,4 +1,4 @@
-package Exercicios04POOIndividual.Exercicio01;
+package Exercicios04POOIndividual.TM.Exercicio01;
 
 public class Programa {
 

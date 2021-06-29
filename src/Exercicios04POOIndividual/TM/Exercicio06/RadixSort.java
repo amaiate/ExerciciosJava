@@ -1,4 +1,4 @@
-package Exercicios04POOIndividual.Exercicio06;
+package Exercicios04POOIndividual.TM.Exercicio06;
 
 
 import java.util.ArrayList;
