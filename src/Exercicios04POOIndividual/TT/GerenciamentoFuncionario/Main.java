@@ -16,6 +16,7 @@ public class Main {
         f2.pagaSalario();
         g1.pagaSalario();
         d1.pagaSalario();
+
         System.out.println(f1);
         System.out.println(p1);
         System.out.println(f2);
