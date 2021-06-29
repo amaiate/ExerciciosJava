@@ -1,8 +1,6 @@
 package Exercicios04POOIndividual.Exercicio06;
 
 
-import java.lang.reflect.Array;
-
 public class StringUtilPlus {
 
     public static String rpad(String s, char c, int n) {
@@ -18,8 +16,8 @@ public class StringUtilPlus {
     }
 
     public static String ltrim (String s){
-        String s1 = new String();
-        s1 = "";
+        String s1 = "";
+
         boolean inicioPalavra = true;
         for (char c:s.toCharArray()
              ) {
@@ -37,17 +35,14 @@ public class StringUtilPlus {
     }
 
     public static String rtrim (String s){
-        String s1 = new String();
-        s1 = "";
+        String s1 = "";
         char[] c1 = s.toCharArray();
 
         for (int i = s.length()-1; i >=0; i--){
                 s1 += c1[i];
 
         }
-        String s2 = new String();
-        s2 = ltrim(s1);
-
+        String s2 = ltrim(s1);
 
         c1 = s2.toCharArray();
 
@@ -87,11 +82,5 @@ public class StringUtilPlus {
 
     }
 
-    /*public static int indexOfN (String s, char c, int n);
-    Retorna a posição da enésima ocorrência do caractere c em s,
-    ou -1 se s não contiver c. Por exemplo, se s = "John | Paul | George | Ringo",
-    c = ‘|’ e n = 2, a função deve retornar a posição da segunda ocorrência do caractere ‘|’
-    (barra vertical) dentro da string s. Que, neste caso, é: 9.
-     */
 
 }

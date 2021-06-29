@@ -10,6 +10,6 @@ public class Main {
 
         System.out.println(StringUtilPlus.trim("      Adriana         "));
 
-        System.out.println(StringUtilPlus.indexOfN("adriana", 'o', 0 ));
+        System.out.println(StringUtilPlus.indexOfN("adriana", 'a', 3 ));
     }
 }
