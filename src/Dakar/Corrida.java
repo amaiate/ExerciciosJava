@@ -2,6 +2,7 @@ package Dakar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Corrida {
 
@@ -10,8 +11,8 @@ public class Corrida {
     private String nome;
     private int quantidadeVeiculosPermitidos;
     private List<Veiculo> listaDeVeiculos;
-    private SocorrendoCarro socorristaCarro;
-    private SocorrendoMoto socorristaMoto;
+    private SocorrendoCarro socorristaCarro = new SocorrendoCarro();
+    private SocorrendoMoto socorristaMoto = new SocorrendoMoto();
 
     public Corrida(double distancia, double premioEmDolares, String nome, int quantidadeVeiculosPermitidos) {
         this.distancia = distancia;
@@ -105,36 +106,29 @@ public class Corrida {
     }
 
     public void socorrerCarro(String documento) {
-        int index = procuraIndexPlaca(documento);
+        Optional<Veiculo> listaCarros = this.listaDeVeiculos
+                .stream()
+                .filter(veiculo -> veiculo.getPlaca() == documento)
+                .findAny();
 
-        if(index != -1) {
-            this.socorristaCarro.socorristaCarro((Carro) this.listaDeVeiculos.get(index));
-        } else {
-            System.out.println("Carro não inscrito na corrida!");
-        }
+        System.out.println(listaCarros.get());
+        socorristaCarro.socorristaCarro((Carro) listaCarros.get());
+
+
+
+
     }
 
     public void socorrerMoto(String documento) {
-        int index = procuraIndexPlaca(documento);
+        Optional<Veiculo> listaMotos = this.listaDeVeiculos
+                .stream()
+                .filter(moto -> moto.getPlaca() == documento)
+                .findAny();
 
-        if(index != -1) {
-            this.socorristaMoto.SocorristaMoto((Moto) this.listaDeVeiculos.get(index));
-        } else {
-            System.out.println("Moto não inscrito na corrida!");
-        }
+        System.out.println(listaMotos.get());
+        socorristaMoto.SocorristaMoto((Moto) listaMotos.get());
     }
 
-    private int procuraIndexPlaca(String placa) {
-        int index = -1;
-
-        for(int i = 0; i < this.listaDeVeiculos.size(); i++) {
-            if(this.listaDeVeiculos.get(i).getPlaca().equals(placa)) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
 
     @Override
     public String toString() {
