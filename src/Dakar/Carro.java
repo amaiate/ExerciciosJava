@@ -8,4 +8,9 @@ public class Carro extends Veiculo{
         super.setPeso(1000);
         super.setRodas(4);
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

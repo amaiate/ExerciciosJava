@@ -100,22 +100,22 @@ public class Corrida {
                 maior = i;
             }
         }
-
+        System.out.println("O grande vencedor da corrida foiiii.... " + this.listaDeVeiculos.get(maior));
         return this.listaDeVeiculos.size() > 0 ? this.listaDeVeiculos.get(maior) : null;
     }
 
     public void socorrerCarro(String documento) {
-        int index = findIndexPlaca(documento);
+        int index = procuraIndexPlaca(documento);
 
         if(index != -1) {
-            this.socorristaCarro.SocorristaCarro((Carro) this.listaDeVeiculos.get(index));
+            this.socorristaCarro.socorristaCarro((Carro) this.listaDeVeiculos.get(index));
         } else {
             System.out.println("Carro não inscrito na corrida!");
         }
     }
 
     public void socorrerMoto(String documento) {
-        int index = findIndexPlaca(documento);
+        int index = procuraIndexPlaca(documento);
 
         if(index != -1) {
             this.socorristaMoto.SocorristaMoto((Moto) this.listaDeVeiculos.get(index));
@@ -124,7 +124,7 @@ public class Corrida {
         }
     }
 
-    private int findIndexPlaca(String placa) {
+    private int procuraIndexPlaca(String placa) {
         int index = -1;
 
         for(int i = 0; i < this.listaDeVeiculos.size(); i++) {

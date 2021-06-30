@@ -17,10 +17,18 @@ public class Main {
 
 
         c1.setListaDeVeiculos(l1);
-        c1.registrarCarro(80, 20, 10, "DFR4565");
-        c1.registrarCarro(120, 20, 10, "DFR5565");
+
         c1.registrarCarro(60, 20, 10, "DFR9565");
+
+        c1.removerVeiculo(v1);
+
+        c1.registrarCarro(60, 20, 80, "DFR9565");
+
         System.out.println(c1);
+
+        c1.socorrerCarro("DFR9565");
+
+        c1.vencedorCorrida();
 
 
 

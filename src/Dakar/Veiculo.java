@@ -67,4 +67,16 @@ public class Veiculo {
     public void setRodas(int rodas) {
         this.rodas = rodas;
     }
+
+    @Override
+    public String toString() {
+        return "Veiculo{" +
+                "velocidade=" + velocidade +
+                ", aceleracao=" + aceleracao +
+                ", anguloDeGiro=" + anguloDeGiro +
+                ", placa='" + placa + '\'' +
+                ", peso=" + peso +
+                ", rodas=" + rodas +
+                '}';
+    }
 }
